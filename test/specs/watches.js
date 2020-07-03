@@ -1,8 +1,19 @@
 import WatchesPage from '../pages/watches.page';
 
 describe('Watches Page', () => {
-  it('should show the banner container', () => {
+  before(() => {
     WatchesPage.open();
+  });
+
+  after(() => {
+    browser.url('https://ebay.com');
+  });
+
+  afterEach(() => {
+    browser.refresh();
+  });
+
+  it('should show the banner container', () => {
     expect(WatchesPage.promoBanner).toBeDisplayed();
   });
 
