@@ -1,3 +1,4 @@
+import { expect as chaiExpect } from 'chai';
 import WatchesPage from '../pages/watches.page';
 
 describe('Watches Page', () => {
@@ -5,12 +6,15 @@ describe('Watches Page', () => {
     WatchesPage.open();
   });
 
-  after(() => {
-    browser.url('https://ebay.com');
-  });
-
-  afterEach(() => {
-    browser.refresh();
+  it('should verify the watches category list', () => {
+    const watchesCategoryList = WatchesPage.getWatchesCategoryListText();
+    chaiExpect(watchesCategoryList).to.deep.equal([
+      'Watches, Parts & Accessories',
+      'Watches',
+      'Parts, Tools & Guides',
+      'Watch Accessories',
+      'Watches Mixed Lots',
+    ]);
   });
 
   it('should show the banner container', () => {
