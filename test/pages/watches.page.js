@@ -13,11 +13,15 @@ class WatchesPage extends Page {
   get watchesCategoryList() {
     return $$('section[id="s0-29-13-0-1[0]-0-0"] ul li'); // 6 elements
   }
+  get fashionLink() {
+    return $$('.hl-cat-nav__js-tab a[href*="Fashion"]')[0];
+  }
+  get watchesLink() {
+    return $('.hl-cat-nav__sub-cat-col a[href*="Watches-Parts"]');
+  }
 
   open() {
-    super.open(
-      'https://www.ebay.com/b/Watches-Parts-Accessories/260324/bn_240853'
-    );
+    super.open('https://www.ebay.com/');
   }
 
   getWatchesCategoryListText() {

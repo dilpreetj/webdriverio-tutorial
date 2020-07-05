@@ -20,6 +20,12 @@ describe('Ebay Product Search', () => {
   });
 
   it('should update the search category', () => {
+    browser.waitUntil(
+      function () {
+        return SearchPage.category.getText() === 'PC Laptops & Netbooks';
+      },
+      { timeout: 3000 }
+    );
     expect(SearchPage.category).toHaveText('PC Laptops & Netbooks');
   });
 });

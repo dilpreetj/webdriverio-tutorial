@@ -4,11 +4,16 @@ import WatchesPage from '../pages/watches.page';
 describe('Watches Page', () => {
   before(() => {
     WatchesPage.open();
+    WatchesPage.fashionLink.moveTo();
+    // browser.pause(1000); // Implicit Wait
+    WatchesPage.watchesLink.waitForDisplayed({ timeout: 5000 }); // Explicit Wait
+    WatchesPage.watchesLink.click();
   });
 
   it('should verify the watches category list', () => {
     const watchesCategoryList = WatchesPage.getWatchesCategoryListText();
     chaiExpect(watchesCategoryList).to.deep.equal([
+      'Jewelry & Watches',
       'Watches, Parts & Accessories',
       'Watches',
       'Parts, Tools & Guides',
