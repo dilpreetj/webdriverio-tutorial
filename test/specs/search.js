@@ -1,11 +1,11 @@
 import SearchPage from '../pages/search.page';
+import { waitForTextChange } from '../utilities/helper';
+import resources from '../resources';
 
 describe('Ebay Product Search', () => {
   it('should open the main url and verify the title', () => {
     SearchPage.open();
-    expect(browser).toHaveTitle(
-      'Electronics, Cars, Fashion, Collectibles & More | eBay'
-    );
+    expect(browser).toHaveTitle(resources.homeTitle);
   });
 
   it('should search for a product and verify the search text value', () => {
@@ -16,16 +16,11 @@ describe('Ebay Product Search', () => {
   });
 
   it('should redirect to a new page and verify the title', () => {
-    expect(browser).toHaveTitle('Laptop | eBay');
+    expect(browser).toHaveTitle(resources.laptopTitle);
   });
 
   it('should update the search category', () => {
-    browser.waitUntil(
-      function () {
-        return SearchPage.category.getText() === 'PC Laptops & Netbooks';
-      },
-      { timeout: 3000 }
-    );
+    waitForTextChange(SearchPage.category, 'PC Laptops & Netbooks', 3000);
     expect(SearchPage.category).toHaveText('PC Laptops & Netbooks');
   });
 });

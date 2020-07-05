@@ -21,7 +21,7 @@ class WatchesPage extends Page {
   }
 
   open() {
-    super.open('https://www.ebay.com/');
+    super.open('/');
   }
 
   getWatchesCategoryListText() {
