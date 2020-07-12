@@ -20,7 +20,7 @@ describe('Ebay Product Search', () => {
   });
 
   it('should update the search category', () => {
-    waitForTextChange(SearchPage.category, 'PC Laptops & Netbooks', 3000);
+    waitForTextChange(SearchPage.category, 'PC Laptops & Netbooks', 10000);
     expect(SearchPage.category).toHaveText('PC Laptops & Netbooks');
   });
 });

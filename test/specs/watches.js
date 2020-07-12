@@ -8,7 +8,7 @@ describe('Watches Page', () => {
     WatchesPage.open();
     WatchesPage.fashionLink.moveTo();
     // browser.pause(1000); // Implicit Wait
-    waitAndClick(WatchesPage.watchesLink, 5000);
+    waitAndClick(WatchesPage.watchesLink, 10000);
   });
 
   it('should verify the watches category list', () => {
@@ -23,7 +23,7 @@ describe('Watches Page', () => {
   });
 
   it('should show the banner title', () => {
-    expect(WatchesPage.infoTitle).toHaveTextContaining('off on select watches');
+    expect(WatchesPage.infoTitle).toHaveTextContaining('watches');
   });
 
   it('should contain link on banner button and verify its clickable', () => {
@@ -33,6 +33,7 @@ describe('Watches Page', () => {
 
   it('should click on the shop button and verify the new url', () => {
     WatchesPage.shopButton.click();
+    const url = browser.getUrl();
     chaiExpect(url).to.include('/fashion/');
   });
 });
