@@ -17,6 +17,7 @@
     "@wdio/cli": "^6.1.22",
     "@wdio/local-runner": "^6.1.22",
     "@wdio/mocha-framework": "^6.1.19",
+    "@wdio/selenium-standalone-service": "^6.1.14",
     "@wdio/spec-reporter": "^6.1.14",
     "@wdio/sync": "^6.1.14",
     "chromedriver": "^83.0.0",
