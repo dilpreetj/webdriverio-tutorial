@@ -23,7 +23,7 @@ describe('Watches Page', () => {
   });
 
   it('should show the banner title', () => {
-    expect(WatchesPage.infoTitle).toHaveTextContaining('watches');
+    expect(WatchesPage.infoTitle).toHaveTextContaining('shoes');
   });
 
   it('should contain link on banner button and verify its clickable', () => {

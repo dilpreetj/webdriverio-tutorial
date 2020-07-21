@@ -1,6 +1,7 @@
 import SearchPage from '../pages/search.page';
 import { waitForTextChange } from '../utilities/helper';
 import resources from '../resources';
+import allureReporter from '@wdio/allure-reporter';
 
 describe('Ebay Product Search', () => {
   it('should open the main url and verify the title', () => {
@@ -9,6 +10,7 @@ describe('Ebay Product Search', () => {
   });
 
   it('should search for a product and verify the search text value', () => {
+    allureReporter.addSeverity('Critical');
     SearchPage.searchInput.addValue('Laptop');
     SearchPage.searchBtn.click();
 
@@ -20,6 +22,7 @@ describe('Ebay Product Search', () => {
   });
 
   it('should update the search category', () => {
+    allureReporter.addFeature('search category');
     waitForTextChange(SearchPage.category, 'PC Laptops & Netbooks', 10000);
     expect(SearchPage.category).toHaveText('PC Laptops & Netbooks');
   });
