@@ -18,7 +18,7 @@ describe('Ebay Product Search', () => {
   });
 
   it('should redirect to a new page and verify the title', () => {
-    expect(browser).toHaveTitle(resources.laptopTitle);
+    expect(browser).toHaveTitle('test');
   });
 
   it('should update the search category', () => {
