@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/register": "^7.10.4",
     "@wdio/allure-reporter": "^6.3.0",
+    "@wdio/browserstack-service": "^6.1.15",
     "@wdio/cli": "^6.1.22",
     "@wdio/local-runner": "^6.1.22",
     "@wdio/mocha-framework": "^6.1.19",
