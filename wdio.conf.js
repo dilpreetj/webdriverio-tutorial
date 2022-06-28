@@ -38,7 +38,7 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 1,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -126,11 +126,11 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter.html
   reporters: [
     'spec',
-    // [video, {
-    //   saveAllVideos: true,       // If true, also saves videos for successful test cases
-    //   videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
-    //   videoRenderTimeout: 5,      // Max seconds to wait for a video to finish rendering
-    // }],
+    [video, {
+      saveAllVideos: true,       // If true, also saves videos for successful test cases
+      videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+      videoRenderTimeout: 5,      // Max seconds to wait for a video to finish rendering
+    }],
   ],
 
   //
